@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Wordle Solver</title>
+	<link rel="stylesheet" href="/public/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<style>
+		h1,
+		input {
+			text-align: center;
+		}
+
+		input.s-ltr {
+			width: 48px;
+			margin: 4px;
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar bg-body-tertiary user-select-none">
+		<div class="container">
+			<span class="navbar-brand">Solver</span>
+			<input type="number" class="form-control" style="width: 80px;" placeholder="词长">
+			<div class="dropdown"><!-- 颜色模式下拉列表 -->
+				<a class="btn btn-lg dropdown-toggle" role="button" id="themeBtn" data-bs-toggle="dropdown" aria-expanded="false">
+					<i class="bi bi-moon-stars-fill"></i>
+				</a>
+				<ul class="dropdown-menu dropdown-menu-end rounded-3 p-1" aria-labelledby="themeBtn">
+					<li><a id="drop-light" class="dropdown-item rounded mb-1">
+							<i class="bi bi-brightness-high-fill"></i>&ensp;Light</a></li>
+					<li><a id="drop-dark" class="dropdown-item rounded">
+							<i class="bi bi-moon-stars-fill"></i>&ensp;Dark</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container mt-4">
+		<div id="input" class="d-flex align-items-center flex-column">
+			<h1 class="mb-1">正确字母<span class="fs-6">（存在且位置正确）</span></h1>
+			<div class="d-flex justify-content-center flex-wrap w-100">
+				<input class="form-control form-control-lg border border-2 border-success s-ltr">
+				<input class="form-control form-control-lg border border-2 border-success s-ltr">
+				<input class="form-control form-control-lg border border-2 border-success s-ltr">
+				<input class="form-control form-control-lg border border-2 border-success s-ltr">
+				<input class="form-control form-control-lg border border-2 border-success s-ltr">
+			</div>
+			<hr class="w-50">
+			<h1 class="mb-1">错置字母<span class="fs-6">（存在但位置错误）</span></h1>
+			<div class="d-flex justify-content-center flex-wrap w-100">
+				<input class="form-control form-control-lg border border-2 border-warning s-ltr">
+				<input class="form-control form-control-lg border border-2 border-warning s-ltr">
+				<input class="form-control form-control-lg border border-2 border-warning s-ltr">
+				<input class="form-control form-control-lg border border-2 border-warning s-ltr">
+				<input class="form-control form-control-lg border border-2 border-warning s-ltr">
+			</div>
+			<div class="d-flex justify-content-center flex-wrap w-100">
+				<input class="form-control form-control-lg border border-2 border-warning s-ltr">
+				<input class="form-control form-control-lg border border-2 border-warning s-ltr">
+				<input class="form-control form-control-lg border border-2 border-warning s-ltr">
+				<input class="form-control form-control-lg border border-2 border-warning s-ltr">
+				<input class="form-control form-control-lg border border-2 border-warning s-ltr">
+			</div>
+			<hr class="w-50">
+			<h1 class="mb-2">排除字母<span class="fs-6">（单词中不存在）</span></h1>
+			<div class="d-flex justify-content-center flex-wrap w-50 mb-2">
+				<input id="input-excluded" class="form-control form-control-lg border border-2 border-muted">
+			</div>
+			<button type="button" class="btn btn-lg btn-primary bg-gradient">&emsp;搜索单词&emsp;</button>
+		</div>
+	</div>
+	<script src="/public/assets/js/jquery-3.7.1.min.js"></script>
+	<script src="/public/assets/js/bootstrap.bundle.min.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>
